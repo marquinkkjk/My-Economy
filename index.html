@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>My Economy</title>
+</head>
+<body>
+    <div id="total">
+        <p class="total">Seu total:</p>
+        <input id= "valor" type="number" placeholder="R$000,00">
+        <button id="editValue"><img src="/assets/pencil-edit.png" alt="Sinal de adição"></button>
+        
+    </div>
+    
+    <div id="gastos">
+        <p>Últimos gastos:</p>
+        <div class="form">
+            <form action="">
+                <input class= "inputA" type="text" list="expenseoptions" placeholder = "Qual o seu gasto?"><br>
+                <input class= "inputB" type="text" list="expenseoptions" placeholder = "Qual o seu gasto?"><br>
+                <input class= "inputC" type="text" list="expenseoptions" placeholder = "Qual o seu gasto?"><br>
+              
+              <datalist id="expenseoptions">
+                <option>Uber</option>
+                <option>Lanche</option>
+                <option>Presente</option>
+                <option>Assinaturas</option>
+                <option>Outros</option>
+              </datalist>
+              
+              <button id="addExpense"><img src="/assets/add-icon.png" alt=""></button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashview">
+        <button>
+        <p>Ver meu DashBoard</p>
+        <img src="/assets/angle-right.png" alt="seta para direita">
+    </button>
+</div>
+
+<div id="graphic">
+    <span></span>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+    background: linear-gradient(to right, #5625AF, #EBE0FF);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    width: 100vh;
+}
+
+#total {
+    font-size: 34px;
+    color: #fff;
+    font-weight: 500;
+    border: 2px solid #fff;
+    border-radius: 32px;
+    width: 370px;
+    margin: 25px 32px;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: #276cd48e;
+}
+
+#total #valor {
+    background: none;
+    border: none;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#total .valor::placeholder {
+    font-size: 23px;
+}
+
+#total button {
+    height: 34px;
+    width: 34px;
+    background: #0000005e;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#total button:hover {
+    outline: 5px solid #ffffff5e;
+}
+
+#total img {
+    height: 34px;
+    width: 34px;
+}
+
+#total button img {
+    position: absolute;
+    inset: 0;
+}
+
+
+#gastos {
+  margin: 75px 32px;
+}
+
+#gastos p {
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+#gastos .form {
+    width: 600px;
+    height: 400px;
+    background: #276cd434;
+    text-align: center;
+    border: 2px solid #ffffff5e;
+    border-radius: 20px;
+}
+
+#gastos .form input {
+    margin-top: 50px;
+    height: 50px;
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff5e;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+#gastos .form input:hover {
+    border: 2px solid #cacaca;
+    background: #0000006c;
+}
+
+#gastos .form input::placeholder {
+    font-family: 'Roboto', sans-serif;
+}
+
+.form button {
+    background-color: #ffffff5e;
+    border: none;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    margin: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form button:hover {
+    outline: 5px solid #ffffff5e;
+}
+
+.form button img {
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    inset: 0;
+}
+
+#dashview p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+}
+
+#dashview button {
+    background-color: #276cd49f;
+    border: 2px solid #ffffff5e;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 60px;
+    width: 350px;
+    position: absolute;
+    right: 50px;
+    top: 650px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#dashview button:hover {
+   background: #194c9e;
+   border: 2px solid #00000027;
+}
+
+#dashview button img {
+    height: 34px;
+    width: 34px;
+}
+
+#graphic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background: conic-gradient(
+        rgb(255, 98, 98) 0% 32%,
+        rgb(255, 255, 101) 32% 62%,
+        rgb(100, 100, 255) 62% 85%,
+        rgb(122, 255, 122) 85% 100%
+    );
+}
