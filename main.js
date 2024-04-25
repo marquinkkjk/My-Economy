@@ -5,6 +5,9 @@ let inputA = document.querySelector('.inputA')
 let inputB = document.querySelector('.inputB')
 let inputC = document.querySelector('.inputC') 
 let reserveInput
+let expenseValueA = document.querySelector('.valueA')
+let expenseValueB = document.querySelector('.valueB')
+let expenseValueC = document.querySelector('.valueC')
 let data = []
 
 totalEdit.addEventListener('dblclick', () => {
@@ -28,6 +31,9 @@ function expenseChange() {
         inputB.value = inputA.value
         inputA.value = ''
         inputA.focus()
+        expenseValueC.value = expenseValueB.value
+        expenseValueB.value = expenseValueA.value
+        expenseValueA.value = ''
     })
 }
 
