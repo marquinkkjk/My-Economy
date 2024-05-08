@@ -10,6 +10,12 @@ let expenseValueB = document.querySelector('.valueB')
 let expenseValueC = document.querySelector('.valueC')
 let data = []
 
+valorTotal.focus()
+
+if(valorTotal.value === "") { 
+alert("Preencha o valor total!") 
+}
+
 totalEdit.addEventListener('dblclick', () => {
     valorTotal.focus()
 })
@@ -36,4 +42,3 @@ function expenseChange() {
         expenseValueA.value = ''
     })
 }
-
