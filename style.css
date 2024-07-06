@@ -63,18 +63,12 @@ body {
 }
 
 #gastos {
-  margin: 200px 32px 0;
-}
-
-#gastos p {
-  font-size: 28px;
-  font-weight: 500;
-  margin-left: 15px;
+  margin: 275px 32px 0;
 }
 
 #gastos .form {
     width: 600px;
-    height: 400px;
+    height: 200px;
     background: #276cd434;
     text-align: center;
     border: 2px solid #ffffff5e;

@@ -1,19 +1,14 @@
 let valorTotal = document.getElementById('valor')
 let totalEdit = document.getElementById('editValue')
 let addExpense = document.getElementById('addExpense')
-let inputA = document.querySelector('.inputA')
-let inputB = document.querySelector('.inputB')
-let inputC = document.querySelector('.inputC') 
-let reserveInput
-let expenseValueA = document.querySelector('.valueA')
-let expenseValueB = document.querySelector('.valueB')
-let expenseValueC = document.querySelector('.valueC')
-let data = []
+let input = document.querySelector('.input')
+let expenseValue = document.querySelector('.value')
+let calculate = 0
 
-valorTotal.focus()
+
 
 if(valorTotal.value === "") { 
-alert("Preencha o valor total!") 
+    alert("PREENCHA COM SEU VALOR TOTAL!")
 }
 
 totalEdit.addEventListener('dblclick', () => {
@@ -32,13 +27,11 @@ expenseChange()
 
 function expenseChange() {
     addExpense.addEventListener('click', () => {
-        data.push(inputC.value)
-        inputC.value = inputB.value
-        inputB.value = inputA.value
-        inputA.value = ''
-        inputA.focus()
-        expenseValueC.value = expenseValueB.value
-        expenseValueB.value = expenseValueA.value
-        expenseValueA.value = ''
+       if (input.value !== "") {
+        calculate = parseFloat(valorTotal.value) - parseFloat(expenseValue.value)
+        valorTotal.value = calculate
+        input.value = ''
+        expenseValue.value = ''
+       }
     })
 }
