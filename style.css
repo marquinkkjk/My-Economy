@@ -33,7 +33,7 @@ body {
     font-size: 20px;
 }
 
-#total .valor::placeholder {
+#total #valor::placeholder {
     font-size: 23px;
 }
 
@@ -149,4 +149,29 @@ body {
 #dashview button img {
     height: 34px;
     width: 34px;
+}
+
+#dashboard::backdrop {
+    background-color: rgb(0 0 0/ .5) 
+}
+
+#dashboard {
+    border: none;
+    border-radius: 15px;
+    height: 350px;
+    width: 350px;
+}
+
+#dashboard h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#close {
+    margin: 80px 150px 0;
+    background: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 60px
 }

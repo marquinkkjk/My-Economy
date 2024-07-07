@@ -14,8 +14,8 @@
 </head>
 <body>
     <div id="total">
-        <p class="total">Seu total:</p>
-        <input id= "valor" type="number" placeholder="R$000,00">
+        <p class="total">Saldo Atual:</p>
+        <input id= "valor" type="text" placeholder="R$000,00">
         <button id="editValue"><img src="/assets/pencil-edit.png" alt="Sinal de adição"></button>
         
     </div>
@@ -45,6 +45,18 @@
         <img src="/assets/angle-right.png" alt="seta para direita">
     </button>
 </div>
+
+    <dialog id="dashboard">
+        <h2>Últimos Gastos:</h2>
+        <ul>
+            <li>Uber - $00,00</li>
+            <li>Lanche - $00,00</li>
+            <li>Presente - $00,00</li>
+            <li>Assinaturas - $00,00</li>
+            <li>Outros - $00,00</li>
+        </ul>
+        <button id="close">OK</button>
+    </dialog>
 
 <script src="main.js"></script>
 </body>

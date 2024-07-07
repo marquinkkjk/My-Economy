@@ -4,8 +4,9 @@ let addExpense = document.getElementById('addExpense')
 let input = document.querySelector('.input')
 let expenseValue = document.querySelector('.value')
 let calculate = 0
-
-
+const dashview = document.getElementById('dashview')
+const dashboard = document.querySelector('#dashboard')
+const buttonClose = document.getElementById('close')
 
 if(valorTotal.value === "") { 
     alert("PREENCHA COM SEU VALOR TOTAL!")
@@ -31,7 +32,22 @@ function expenseChange() {
         calculate = parseFloat(valorTotal.value) - parseFloat(expenseValue.value)
         valorTotal.value = calculate
         input.value = ''
-        expenseValue.value = ''
-       }
-    })
+        expenseValue.value = '' 
+       }})
+    }
+
+openDash ()
+
+function openDash() {
+    dashview.onclick = () => {
+        dashboard.showModal()
+    }
+}
+
+closeDash ()
+
+function closeDash() {
+    buttonClose.onclick = () => {
+        dashboard.close()
+    }
 }
