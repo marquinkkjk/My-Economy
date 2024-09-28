@@ -7,6 +7,7 @@ let calculate = 0
 const dashview = document.getElementById('dashview')
 const dashboard = document.querySelector('#dashboard')
 const buttonClose = document.getElementById('close')
+let totalExpenses = document.querySelector('.data')
 
 if(valorTotal.value === "") { 
     alert("PREENCHA COM SEU VALOR TOTAL!")
@@ -33,8 +34,30 @@ function expenseChange() {
         valorTotal.value = calculate
         input.value = ''
         expenseValue.value = '' 
-       }})
+       } 
+       if(isNaN(valorTotal.value)) {
+        alert("PREENCHA APENAS COM NÚMEROS!")
+        valorTotal.value = ''
+       }
+       })
+}
+
+dataUpdate()
+
+function dataUpdate() {
+    switch(input) {
+        case "Contas":
+            totalExpenses.textContent =
+            "Contas - teste"
+            "Mercado - $00,00"
+            "Uber - $00,00"
+            "Lanche - $00,00"
+            "Presente - $00,00"
+            "Assinaturas - $00,00"
+            "Outros - $00,00"
+        break
     }
+}
 
 openDash ()
 
