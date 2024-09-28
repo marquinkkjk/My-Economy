@@ -16,7 +16,7 @@
     <div id="total">
         <p class="total">Saldo Atual:</p>
         <input id= "valor" type="text" placeholder="R$000,00">
-        <button id="editValue"><img src="/assets/pencil-edit.png" alt="Sinal de adição"></button>
+        <button id="editValue"><img src="/assets/pencil.svg" alt="Sinal de adição"></button>
         
     </div>
     
@@ -26,7 +26,9 @@
                 <input class= "input" type="text" list="expenseoptions" placeholder = "Qual o seu gasto?">
                 <input class= "value" type="number" placeholder = "Valor"><br>
               
-              <datalist id="expenseoptions">
+                <datalist id="expenseoptions">
+                <option>Contas</option>
+                <option>Mercado</option>
                 <option>Uber</option>
                 <option>Lanche</option>
                 <option>Presente</option>
@@ -34,7 +36,7 @@
                 <option>Outros</option>
               </datalist>
               
-              <button id="addExpense"><img src="/assets/add-icon.png" alt=""></button>
+              <button id="addExpense"><img src="https://img.icons8.com/?size=100&id=84061&format=png&color=000000" alt=""></button>
             </form>
         </div>
     </div>
@@ -42,13 +44,15 @@
     <div id="dashview">
         <button>
         <p>Ver meu DashBoard</p>
-        <img src="/assets/angle-right.png" alt="seta para direita">
+        <img src="/assets/chevron-right.svg" alt="seta para direita">
     </button>
 </div>
 
     <dialog id="dashboard">
         <h2>Últimos Gastos:</h2>
-        <ul>
+        <ul class="data">
+            <li>Contas - $00,00</li>
+            <li>Mercado - $00,00</li>
             <li>Uber - $00,00</li>
             <li>Lanche - $00,00</li>
             <li>Presente - $00,00</li>

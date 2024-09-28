@@ -45,7 +45,7 @@ body {
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 #total button:hover {
@@ -53,13 +53,12 @@ body {
 }
 
 #total img {
-    height: 34px;
-    width: 34px;
+    height: 28px;
+    width: 28px;
 }
 
 #total button img {
-    position: absolute;
-    inset: 0;
+    margin: -2px;
 }
 
 #gastos {
@@ -160,6 +159,7 @@ body {
     border-radius: 15px;
     height: 350px;
     width: 350px;
+    background-color: #ffffffcc;
 }
 
 #dashboard h2 {
@@ -169,7 +169,7 @@ body {
 }
 
 #close {
-    margin: 80px 150px 0;
+    margin: 50px 145px 0;
     background: none;
     border-radius: 10px;
     height: 40px;
