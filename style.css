@@ -97,7 +97,7 @@ body {
     margin: 30px;
     position: relative;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .form button:hover {

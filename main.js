@@ -7,7 +7,6 @@ let calculate = 0
 const dashview = document.getElementById('dashview')
 const dashboard = document.querySelector('#dashboard')
 const buttonClose = document.getElementById('close')
-let totalExpenses = document.querySelector('.data')
 
 if(valorTotal.value === "") { 
     alert("PREENCHA COM SEU VALOR TOTAL!")
@@ -30,6 +29,7 @@ expenseChange()
 function expenseChange() {
     addExpense.addEventListener('click', () => {
        if (input.value !== "") {
+        datasave = input.value
         calculate = parseFloat(valorTotal.value) - parseFloat(expenseValue.value)
         valorTotal.value = calculate
         input.value = ''
@@ -43,21 +43,6 @@ function expenseChange() {
 }
 
 dataUpdate()
-
-function dataUpdate() {
-    switch(input) {
-        case "Contas":
-            totalExpenses.textContent =
-            "Contas - teste"
-            "Mercado - $00,00"
-            "Uber - $00,00"
-            "Lanche - $00,00"
-            "Presente - $00,00"
-            "Assinaturas - $00,00"
-            "Outros - $00,00"
-        break
-    }
-}
 
 openDash ()
 
