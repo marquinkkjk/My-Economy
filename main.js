@@ -1,4 +1,4 @@
-let totalValue = document.getElementById('valor')
+let totalValue = document.querySelector('.balance')
 const totalEdit = document.getElementById('editValue')
 const addExpense = document.getElementById('addExpense')
 let input = document.querySelector('.input')
@@ -12,16 +12,26 @@ let expenses = document.getElementById('expenselist')
 const buttonClose = document.getElementById('close')
 
 verifyUserData()
+totalChange()
+openDash ()
+closeDash ()
 
-totalEdit.addEventListener('click', () => {
+totalEdit.onclick = () => {
     totalValue.focus()
-})
+    totalValue.disabled = false;
+}
+
+totalValue.addEventListener("keypress", function(event) {
+    if(event.key === "Enter") {
+        totalValue.blur()
+        totalValue.disabled = true
+    }
+  }
+)
 
 addExpense.addEventListener('click', (event) => {
     event.preventDefault()
 })
-
-totalChange()
 
 function totalChange() {
     addExpense.addEventListener('click', () => {
@@ -33,17 +43,9 @@ function totalChange() {
         saveDataUser()  
         input.value = ''
         expenseValue.value = ''
-       } 
-       if(isNaN(totalValue.value)) {
-        alert("PREENCHA APENAS COM NÚMEROS!")
-        totalValue.value = ''
        }
        })
 }
-
-openDash ()
-closeDash ()
-
 
 function openDash() {
     dashview.onclick = () => {
@@ -55,78 +57,32 @@ function expenseChange() {
   switch (typeSave) {
    case 'Contas':
     valueSave[0] += parseInt(expenseValue.value)
-    expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Mercado':
         valueSave[1] += parseInt(expenseValue.value)
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Uber':
         valueSave[2] += parseInt(expenseValue.value)
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Lanche':
         valueSave[3] += parseInt(expenseValue.value)
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Presente':
         valueSave[4] += parseInt(expenseValue.value)
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Assinaturas':
         valueSave[5] += parseInt(expenseValue.value)
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
     break
 
     case 'Outros':
         valueSave[6] += parseInt(expenseValue.value)
+    break
+  }
         expenses.innerHTML = `
         <li>Contas - $${valueSave[0]},00</li>
         <li>Mercado - $${valueSave[1]},00</li>
@@ -135,8 +91,6 @@ function expenseChange() {
         <li>Presente - $${valueSave[4]},00</li>
         <li>Assinaturas - $${valueSave[5]},00</li>
         <li>Outros - $${valueSave[6]},00</li>`
-    break
-  }
 }
 
 function saveDataUser () {
@@ -146,16 +100,13 @@ function saveDataUser () {
 
 function verifyUserData() {
     if(!localStorage.getItem('expenseData') && !localStorage.getItem('userTotal')) {
-        alert("PREENCHA COM SEU VALOR TOTAL!")
+        totalValue.disabled = false;
+        totalValue.focus();
 
     } else {
-        valueSave[0] = parseInt(localStorage.getItem('expenseData').split(',')[0])
-        valueSave[1] = parseInt(localStorage.getItem('expenseData').split(',')[1])
-        valueSave[2] = parseInt(localStorage.getItem('expenseData').split(',')[2])
-        valueSave[3] = parseInt(localStorage.getItem('expenseData').split(',')[3])
-        valueSave[4] = parseInt(localStorage.getItem('expenseData').split(',')[4])
-        valueSave[5] = parseInt(localStorage.getItem('expenseData').split(',')[5])
-        valueSave[6] = parseInt(localStorage.getItem('expenseData').split(',')[6])
+        for (let i = 0; i<valueSave.length; i++) {
+           valueSave[i] = parseInt(localStorage.getItem('expenseData').split(',')[i])
+        }
 
         expenses.innerHTML = `
         <li>Contas - $${valueSave[0]},00</li>
@@ -165,7 +116,6 @@ function verifyUserData() {
         <li>Presente - $${valueSave[4]},00</li>
         <li>Assinaturas - $${valueSave[5]},00</li>
         <li>Outros - $${valueSave[6]},00</li>`
-
         totalValue.value = localStorage.getItem('userTotal')
     }
 }
