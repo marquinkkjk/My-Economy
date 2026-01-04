@@ -55,8 +55,6 @@ O My Economy foi desenvolvido com foco em **aprendizado prático de JavaScript**
 - Organização da lógica de uma aplicação front-end
 - Simulação de um sistema real de controle financeiro pessoal
 
-O projeto busca unir simplicidade, usabilidade e clareza visual, servindo tanto como ferramenta prática quanto como projeto de portfólio.
-
 ---
 
 ## 📌 Possíveis Melhorias Futuras
