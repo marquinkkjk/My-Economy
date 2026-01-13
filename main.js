@@ -11,10 +11,10 @@ const dashboard = document.getElementById('dashboard')
 let expenses = document.getElementById('expenselist')
 const buttonClose = document.getElementById('close')
 
-verifyUserData()
+verifyDataUser()
 totalChange()
-openDash ()
-closeDash ()
+openDash()
+closeDash()
 
 totalEdit.onclick = () => {
     totalValue.focus()
@@ -25,13 +25,10 @@ totalValue.addEventListener("keypress", function(event) {
     if(event.key === "Enter") {
         totalValue.blur()
         totalValue.disabled = true
+        totalChange()
     }
   }
 )
-
-addExpense.addEventListener('click', (event) => {
-    event.preventDefault()
-})
 
 function totalChange() {
     addExpense.addEventListener('click', () => {
@@ -39,7 +36,7 @@ function totalChange() {
         typeSave = input.value
         expenseChange()
         calculate = parseFloat(totalValue.value) - parseFloat(expenseValue.value)
-        totalValue.value = calculate
+        totalValue.value = Number(calculate.toFixed(2))
         saveDataUser()  
         input.value = ''
         expenseValue.value = ''
@@ -56,41 +53,34 @@ function openDash() {
 function expenseChange() {
   switch (typeSave) {
    case 'Contas':
-    valueSave[0] += parseInt(expenseValue.value)
+    valueSave[0] += parseFloat(expenseValue.value)
     break
 
     case 'Mercado':
-        valueSave[1] += parseInt(expenseValue.value)
+        valueSave[1] += parseFloat(expenseValue.value)
     break
 
     case 'Uber':
-        valueSave[2] += parseInt(expenseValue.value)
+        valueSave[2] += parseFloat(expenseValue.value)
     break
 
     case 'Lanche':
-        valueSave[3] += parseInt(expenseValue.value)
+        valueSave[3] += parseFloat(expenseValue.value)
     break
 
     case 'Presente':
-        valueSave[4] += parseInt(expenseValue.value)
+        valueSave[4] += parseFloat(expenseValue.value)
     break
 
     case 'Assinaturas':
-        valueSave[5] += parseInt(expenseValue.value)
+        valueSave[5] += parseFloat(expenseValue.value)
     break
 
     case 'Outros':
-        valueSave[6] += parseInt(expenseValue.value)
+        valueSave[6] += parseFloat(expenseValue.value)
     break
   }
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
+        dashboardUpdate()
 }
 
 function saveDataUser () {
@@ -98,7 +88,7 @@ function saveDataUser () {
     localStorage.setItem("userTotal", totalValue.value)
 }
 
-function verifyUserData() {
+function verifyDataUser() {
     if(!localStorage.getItem('expenseData') && !localStorage.getItem('userTotal')) {
         totalValue.disabled = false;
         totalValue.focus();
@@ -108,14 +98,7 @@ function verifyUserData() {
            valueSave[i] = parseInt(localStorage.getItem('expenseData').split(',')[i])
         }
 
-        expenses.innerHTML = `
-        <li>Contas - $${valueSave[0]},00</li>
-        <li>Mercado - $${valueSave[1]},00</li>
-        <li>Uber - $${valueSave[2]},00</li>
-        <li>Lanche - $${valueSave[3]},00</li>
-        <li>Presente - $${valueSave[4]},00</li>
-        <li>Assinaturas - $${valueSave[5]},00</li>
-        <li>Outros - $${valueSave[6]},00</li>`
+        dashboardUpdate()
         totalValue.value = localStorage.getItem('userTotal')
     }
 }
@@ -124,4 +107,15 @@ function closeDash() {
     buttonClose.onclick = () => {
         dashboard.close()
     }
+}
+
+function dashboardUpdate() {
+        expenses.innerHTML = `
+        <li>Contas - $${valueSave[0].toFixed(2)}</li>
+        <li>Mercado - $${valueSave[1].toFixed(2)}</li>
+        <li>Uber - $${valueSave[2].toFixed(2)}</li>
+        <li>Lanche - $${valueSave[3].toFixed(2)}</li>
+        <li>Presente - $${valueSave[4].toFixed(2)}</li>
+        <li>Assinaturas - $${valueSave[5].toFixed(2)}</li>
+        <li>Outros - $${valueSave[6].toFixed(2)}</li>`
 }

@@ -24,11 +24,15 @@ body{font-family: 'Poppins', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe U
 .balance{flex:1;padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:16px}
 .balance:focus{outline:2px solid rgba(43,110,216,0.12);border-color:var(--primary)}
 .balance-actions button{background:transparent;border:1px solid #e6e9ef;padding:8px 12px;border-radius:8px;cursor:pointer}
+.balance::-webkit-outer-spin-button,
+.balance::-webkit-inner-spin-button {-webkit-appearance: none;}
 
 .form-area{display:flex;flex-direction:column;gap:8px}
 .form-inline{display:flex;gap:8px}
 .form-inline .input{flex:2;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
 .form-inline .value{width:130px;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.value::-webkit-outer-spin-button,
+.value::-webkit-inner-spin-button {-webkit-appearance: none;}
 .primary{background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
 .primary:hover{filter:brightness(0.98)}
 
